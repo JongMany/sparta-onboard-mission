@@ -19,7 +19,8 @@ const config: Config = {
         lightGrayColor: '#D7E0E6',
         metaInfoTextGrayColor: '#9DA7AE',
         blushRed: '#FF6C7A',
-        mainRed: "#E8344E"
+        mainRed: "#E8344E",
+
       },
       aspectRatio: {
         floatingButtonRatio: 'auto 186 / 72',
@@ -31,6 +32,6 @@ const config: Config = {
       }
     },
   },
-  plugins: [],
+  plugins: [require("tailwind-scrollbar-hide")],
 };
 export default config;
