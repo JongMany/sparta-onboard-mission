@@ -11,23 +11,25 @@ import {ProgramIntroductionSection} from "@/components/game/program-introduction
 import {StudentTestimonialSection} from "@/components/game/student-testimonial";
 import {CareerPathSection} from "@/components/game/career-path";
 import {DetailedCurriculumSection} from "@/components/game/detailed-curriculum";
+import {ShowTimeTable} from "@/components/game/show-time-table";
 
 const GameLandingPage = () => {
   return (
       <>
-        <MainBanner />
-        <SubNavbar />
+        <MainBanner/>
+        <SubNavbar/>
         <CountdownBanner/>
-        <ProgramEnrollmentStatusSection />
-        <ShowProjectResultSection />
+        <ProgramEnrollmentStatusSection/>
+        <ShowProjectResultSection/>
         <WhyBecomeDeveloperSection/>
-        <JuniorDeveloperRequirements />
+        <JuniorDeveloperRequirements/>
         <ProgramIntroductionSection/>
         <StudentTestimonialSection/>
         <CareerPathSection/>
         <DetailedCurriculumSection/>
+        <ShowTimeTable/>
         <div className={"w-full fixed bottom-[100px] z-20"}>
-          <ContactUsFloatingButton />
+          <ContactUsFloatingButton/>
         </div>
       </>
   );
