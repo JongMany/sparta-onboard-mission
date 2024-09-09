@@ -35,8 +35,22 @@ const config: Config = {
         'center-top': 'center top',
       },
       boxShadow: {
-        'accordion-shadow':'0px 8px 24px rgba(129, 137, 143, 0.12)'
-      }
+        'accordion-shadow': '0px 8px 24px rgba(129, 137, 143, 0.12)'
+      },
+      keyframes: {
+        fadeIn: {
+          '0%': {opacity: '0'},
+          '100%': {opacity: '1'},
+        },
+        fadeOut: {
+          '0%': {opacity: '1'},
+          '100%': {opacity: '0'},
+        },
+      },
+      animation: {
+        fadeIn: 'fadeIn 0.15s linear',
+        fadeOut: 'fadeOut 0.15s linear',
+      },
     },
   },
   plugins: [require("tailwind-scrollbar-hide")],

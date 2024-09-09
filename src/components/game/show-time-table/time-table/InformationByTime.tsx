@@ -1,5 +1,5 @@
 "use client";
-import React, {useState} from 'react';
+import React, {useEffect, useState} from 'react';
 import Image from "next/image";
 import NineToTenImage from "@/assets/images/game/information/time-table/nineToTen.webp";
 import TenToFifteenImage from "@/assets/images/game/information/time-table/tenToFifteen.webp";
@@ -9,11 +9,18 @@ import TwentyToTwentyOneImage from "@/assets/images/game/information/time-table/
 type EducationTime = '9-10' | '10-15' | '15-20' | '20-21'
 export const InformationByTime = () => {
   const [selectEducationTime, setSelectEducationTime] = useState<EducationTime>('9-10');
+  const [fade, setFade] = useState<'fadeIn' | 'fadeOut'>('fadeIn');
 
   const selectEducationTimeHandler = (e) => {
     // "[data-name=dataName]"
     if (e.target.closest("[data-types=time-table]")) {
-      setSelectEducationTime(e.target.dataset.target as EducationTime);
+      if (e.target.dataset.target === selectEducationTime) return;
+
+      setFade('fadeOut');
+      setTimeout(() => {
+        setSelectEducationTime(e.target.dataset.target as EducationTime);
+        setFade('fadeIn');
+      }, 150);
     }
   }
 
@@ -49,34 +56,34 @@ export const InformationByTime = () => {
           >20시-21시
           </div>
         </div>
-        <div
-            className={`${'opacity-100'} transition-opacity duration-150 ease-linear flex flex-col items-center gap-[24px] px-[4px]`}>
-          <ActivityInformationByTime time={selectEducationTime}/>
-        </div>
+        {/*<div*/}
+        {/*    className={`${'opacity-100'} transition-opacity duration-150 ease-linear flex flex-col items-center gap-[24px] px-[4px]`}>*/}
+        <ActivityInformationByTime time={selectEducationTime} fade={fade}/>
+        {/*</div>*/}
       </div>
   );
 };
 
-function ActivityInformationByTime({time}: { time: EducationTime }) {
-  if (time === "9-10") {
-    return (
-        <>
+function ActivityInformationByTime({time, fade}: { time: EducationTime, fade: 'fadeIn' | 'fadeOut' }) {
+  const animateCSS = fade==="fadeOut"? 'animate-fadeOut' :'animate-fadeIn'
+  return (
+      < div
+          className={`${animateCSS} transition-opacity flex flex-col items-center gap-[24px] px-[4px]`}>
+        {time === "9-10" && <>
           <section className={"flex flex-col gap-[12px] w-full"}>
             <h4 className={"text-[20px] font-[700] leading-[26px] mb-[8px] text-[rgb(20,22,23)]"}>오전 과제</h4>
             <div className={"flex flex-col gap-[4px]"}>
-              <p className={"font-[400] text-[14px] leading-[22px] text-[rgb(95,102,107)]"}>담임 매니저에게 학습 계획표를 제출하고 데일리 학습
+              <p className={"font-[400] text-[14px] leading-[22px] text-[rgb(95,102,107)]"}>담임 매니저에게 학습 계획표를 제출하고 데일리
+                학습
                 관리를 시작합니다.</p>
               <p className={"font-[400] text-[14px] leading-[22px] text-[rgb(95,102,107)]"}>매일 알고리즘 문제를 풀며 하루를
                 시작합니다.</p>
             </div>
           </section>
           <Image src={NineToTenImage} alt={'9시-10시 활동 사진'}/>
-        </>
-    )
-  }
-  if (time === "10-15") {
-    return (
-        <>
+        </>}
+
+        {time === "10-15" && <>
           <section className={"flex flex-col gap-[16px] w-full"}>
             <h4 className={"text-[20px] font-[700] leading-[26px] mb-[8px] text-[rgb(20,22,23)]"}>강의 수강 및 팀 회의</h4>
             <div className={"flex flex-col gap-[8px]"}>
@@ -101,13 +108,8 @@ function ActivityInformationByTime({time}: { time: EducationTime }) {
             </div>
           </section>
           <Image src={TenToFifteenImage} alt={'15시-20시 활동 사진'}/>
-        </>
-    )
-  }
-
-  if (time === "15-20") {
-    return (
-        <>
+        </>}
+        {time === "15-20" && <>
           <section className={"flex flex-col gap-[16px] w-full"}>
             <h4 className={"text-[20px] font-[700] leading-[26px] mb-[8px] text-[rgb(20,22,23)]"}>집중 코딩 및 프로젝트 진행</h4>
             <div className={"flex flex-col gap-[8px]"}>
@@ -131,13 +133,8 @@ function ActivityInformationByTime({time}: { time: EducationTime }) {
             </div>
           </section>
           <Image src={FifteenToTwentyImage} alt={'15시-20시 활동 사진'}/>
-        </>
-    )
-  }
-
-  if (time === "20-21") {
-    return (
-        <>
+        </>}
+        {time === "20-21" && <>
           <section className={"flex flex-col gap-[12px] w-full"}>
             <h4 className={"text-[20px] font-[700] leading-[26px] mb-[8px] text-[rgb(20,22,23)]"}>개인 회고</h4>
             <div className={"flex flex-col gap-[4px]"}>
@@ -148,7 +145,9 @@ function ActivityInformationByTime({time}: { time: EducationTime }) {
             </div>
           </section>
           <Image src={TwentyToTwentyOneImage} alt={'20시-21시 활동 사진'}/>
-        </>
-    )
-  }
+        </>}
+      </div>
+
+  )
 }
+
