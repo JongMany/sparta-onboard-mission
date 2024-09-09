@@ -1,4 +1,4 @@
-import type { Config } from "tailwindcss";
+import type {Config} from "tailwindcss";
 
 const config: Config = {
   content: [
@@ -28,7 +28,14 @@ const config: Config = {
       },
       backgroundImage: {
         mainBannerRadialGradient: 'radial-gradient(159.82% 159.82% at 50% 166.08%, #6d77cf 0%, #141617 85.5%)',
-        mainRed: "#E8344E"
+        mainRed: "#E8344E",
+        showProjectResultTexture: 'url("../assets/images/game/information/show-project-result/bg.webp")'
+      },
+      objectPosition: {
+        'center-top': 'center top',
+      },
+      boxShadow: {
+        'accordion-shadow':'0px 8px 24px rgba(129, 137, 143, 0.12)'
       }
     },
   },
