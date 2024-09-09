@@ -9,8 +9,8 @@ export function MainHeader() {
   const direction = useScrollDirection();
   // scroll 방향이 아래면 숨겨짐, scroll 방향이 위면 보여짐
   return <nav
-      className={`fixed w-full h-fit backdrop-blur-[10px] border-b-[1px] border-b-[#e4ebf0] flex flex-col justify-center items-center z-[21] transition-all duration-300 ease ${direction === "down" ? 'hidden' : ''}`}>
-    <div className={"px-6 h-[60px] w-full flex items-center justify-between"}>
+      className={`fixed w-full h-fit backdrop-blur-[10px] border-b-[1px] border-b-[#e4ebf0] flex flex-col justify-center items-center z-[21] transition-all duration-300 ease ${direction === "down" ? 'hidden' : ''} bg-white`}>
+    <div className={"px-6 h-[60px] w-full flex items-center justify-between max-w-[1200px]"}>
       <div className={"flex items-center gap-[40px]"}>
         <Link href={'/'} className={"min-h-[50.5px]"}>
           <Image className={"mt-[3px]"} src={NewLogo} alt={"스파르타 내일배움캠프"} width={134} height={40}/>
