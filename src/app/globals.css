@@ -5,3 +5,7 @@
 * {
     box-sizing: border-box;
 }
+
+:root {
+    --swiper-wrapper-transition-timing-function: ease-in-out; /* 또는 다른 타이밍 함수 */
+}

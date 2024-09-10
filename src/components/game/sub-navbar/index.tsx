@@ -15,6 +15,7 @@ const SubNavbar = () => {
     if (section) scrollToSection(section);
   }, [hash])
 
+  // TODO: 특정 영역에 들어가면 빨간 색상
   return (
       <>
         <section id={"gameHero"}></section>

@@ -36,7 +36,8 @@ const config: Config = {
       },
       boxShadow: {
         'accordion-shadow': '0px 8px 24px rgba(129, 137, 143, 0.12)',
-        'dropdown-menu': '0 8px 24px 0 rgba(95, 102, 107, 0.12)'
+        'dropdown-menu': '0 8px 24px 0 rgba(95, 102, 107, 0.12)',
+        'video-item': 'rgba(0, 0, 0, 0.25) 0px 24px 54px 0px'
       },
       keyframes: {
         fadeIn: {
@@ -52,8 +53,11 @@ const config: Config = {
         fadeIn: 'fadeIn 0.15s linear',
         fadeOut: 'fadeOut 0.15s linear',
       },
+      transitionTimingFunction: {
+        'swiper': 'var(--swiper-wrapper-transition-timing-function, initial)',
+      },
     },
   },
-  plugins: [require("tailwind-scrollbar-hide")],
+  plugins: [require("tailwind-scrollbar-hide"), require("@xpd/tailwind-3dtransforms")],
 };
 export default config;

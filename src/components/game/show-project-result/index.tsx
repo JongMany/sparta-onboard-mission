@@ -1,4 +1,5 @@
 import React from 'react';
+import ProjectResultCarousel from "@/components/game/show-project-result/carousel/ProjectResultCarousel";
 export const ShowProjectResultSection = () => {
   return (
       <section id={"gameProject"} className={`relative`}>
@@ -16,15 +17,7 @@ export const ShowProjectResultSection = () => {
                 독보적인 포트폴리오를 완성하세요.
               </h3>
             </div>
-            <section>
-              {/*TODO: Swiper 추가하기*/}
-              <div>
-                {/* Swiper */}
-              </div>
-              <div>
-                {/*  Swiper */}
-              </div>
-            </section>
+            <ProjectResultCarousel/>
           </section>
 
         </section>
