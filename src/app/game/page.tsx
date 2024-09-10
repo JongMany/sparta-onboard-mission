@@ -12,6 +12,9 @@ import {StudentTestimonialSection} from "@/components/game/student-testimonial";
 import {CareerPathSection} from "@/components/game/career-path";
 import {DetailedCurriculumSection} from "@/components/game/detailed-curriculum";
 import {ShowTimeTable} from "@/components/game/show-time-table";
+import {EmployedSeniorInterviewSection} from "@/components/game/employed-senior-interview";
+import {ConsultationSection} from "@/components/game/consultation";
+import {PortfolioProcessSection} from "@/components/game/portfolio-process";
 
 const GameLandingPage = () => {
   return (
@@ -28,6 +31,10 @@ const GameLandingPage = () => {
         <CareerPathSection/>
         <DetailedCurriculumSection/>
         <ShowTimeTable/>
+        <EmployedSeniorInterviewSection/>
+        <ConsultationSection/>
+        <PortfolioProcessSection/>
+            <PartnerCompanySection/>
         <div className={"w-full fixed bottom-[100px] z-20"}>
           <ContactUsFloatingButton/>
         </div>
