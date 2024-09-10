@@ -18,7 +18,7 @@ export const FAQItem = ({question, answers, isOpened, onClick}: Props) => {
         </div>
         {/* 숨은 아이템 */}
         {isOpened && <div className={"flex flex-col gap-[4px] pl-[22px]"}>
-          {answers.map((answer) => <p
+          {answers.map((answer) => <p key={answer}
               className={"text-[rgb(129,137,143)] text-[16px] leading-[26px] whitespace-pre-wrap"}>{answer}</p>)}
         </div>}
       </div>

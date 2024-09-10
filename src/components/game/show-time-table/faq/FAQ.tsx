@@ -62,7 +62,7 @@ export const FAQ = () => {
           </div>
         </section>
         <section className={"flex flex-col gap-[20px]"}>
-          {FAQList.map((item, index) => <FAQItem question={item.question} answers={item.answers}
+          {FAQList.map((item, index) => <FAQItem key={item.question} question={item.question} answers={item.answers}
                                                  isOpened={toggleFAQState[index]}
                                                  onClick={toggleFAQStateHandler(index)}/>)}
         </section>

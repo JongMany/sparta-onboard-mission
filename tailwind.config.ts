@@ -35,7 +35,8 @@ const config: Config = {
         'center-top': 'center top',
       },
       boxShadow: {
-        'accordion-shadow': '0px 8px 24px rgba(129, 137, 143, 0.12)'
+        'accordion-shadow': '0px 8px 24px rgba(129, 137, 143, 0.12)',
+        'dropdown-menu': '0 8px 24px 0 rgba(95, 102, 107, 0.12)'
       },
       keyframes: {
         fadeIn: {

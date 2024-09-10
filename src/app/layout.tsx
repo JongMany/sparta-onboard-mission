@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+import type {Metadata} from "next";
 // import localFont from "next/font/local";
 import "./globals.css";
 import {MainHeader} from "@/components/shared/main-header";
@@ -21,19 +21,17 @@ export const metadata: Metadata = {
 };
 
 export default function RootLayout({
-  children,
-}: Readonly<{
+                                     children,
+                                   }: Readonly<{
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
-      <body
-        // className={`${geistSans.variable} ${geistMono.variable} antialiased`}
-      >
-        <MainHeader />
-        {children}
+      <html lang="en">
+      <body>
+      <MainHeader/>
+      {children}
+      <MainFooter/>
       </body>
-      <MainFooter />
-    </html>
+      </html>
   );
 }

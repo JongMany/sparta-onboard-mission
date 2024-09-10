@@ -1,5 +1,6 @@
 import React from 'react';
 import {GoDotFill} from "react-icons/go";
+import {ListBullet} from "@/components/shared/list/ListBullet";
 
 type Props = {
   title: string;
@@ -11,7 +12,7 @@ export const DetailInformation = ({title, information}: Props) => {
         <p className={"break-keep text-[rgb(20,22,23)] leading-[26px] text-[16px] "}>{title}</p>
         <ul className={"flex flex-col text-[rgb(129,137,143)] mt-[12px] ml-[20px] gap-[4px] text-[14px] leading-[22px] font-[400]"}>
           {information.map((item) => <li className={"break-keep"}>
-            <span className={"text-[18px]"}>• </span>{item}</li>)}
+            <ListBullet/>{item}</li>)}
         </ul>
       </div>
   );

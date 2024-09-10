@@ -8,7 +8,7 @@ import Youtube from "@/assets/images/sns/youtube.webp";
 import Badge from "@/assets/images/sns/badge.webp"
 
 export const MainFooter = () => {
-  return <footer className={"flex justify-center py-[40px] px-[60px]"}>
+  return <footer className={"flex justify-center items-center py-[40px] px-[60px] w-full border-t-[1px] border-[#E4EBF0] bg-white break-keep"}>
     <div className={"w-full min-w-[328px] flex flex-col gap-[24px] max-w-[1152px]"}>
       <section className={"w-full flex gap-[24px] justify-between"}>
         <section className={"flex flex-col gap-[12px]"}>

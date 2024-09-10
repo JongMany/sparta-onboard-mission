@@ -17,7 +17,6 @@ export const CountdownBanner = () => {
               <div className={"w-[76px] h-[76px] text-center rounded-[8px] flex justify-center items-center font-[700] mx-[4px] text-[rgb(20,22,23)] bg-[rgba(255,255,255,0.8)]"}>50</div>
               :
               <div className={"w-[76px] h-[76px] text-center rounded-[8px] flex justify-center items-center font-[700] mx-[4px] text-[rgb(20,22,23)] bg-[rgba(255,255,255,0.8)]"}>24</div>
-
             </div>
             <div className={"hidden"}>곧 올해 마지막 모집이 마감됩니다.</div>
           </main>

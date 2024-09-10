@@ -1,7 +1,7 @@
 import React from 'react';
 export const ShowProjectResultSection = () => {
   return (
-      <section id={"gameProjectResults"} className={`relative`}>
+      <section id={"gameProject"} className={`relative`}>
         <section className={"bg-cover w-full overflow-hidden bg-rgb(20,22,23)] bg-showProjectResultTexture"}>
           <section className={"relative flex flex-col w-full my-0 mx-auto gap-[60px] max-w-[600px] min-w-[820px]  py-[100px]"}>
             <div className={"w-full"}>
