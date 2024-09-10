@@ -1,6 +1,6 @@
 import {useState} from "react";
 
-export const useSwipe = (prevAction: () => void, nextAction: () => void) => {
+export const useSwipe = (prevAction: () => void, nextAction: () => void, threshold: number = 200) => {
   const [startX, setStartX] = useState(0); // 스와이프 시작 좌표
   const [endX, setEndX] = useState(0);     // 스와이프 종료 좌표
 
@@ -19,7 +19,7 @@ export const useSwipe = (prevAction: () => void, nextAction: () => void) => {
 
   // 마우스 또는 터치가 끝났을 때 스와이프를 판단
   const handleMouseUp = () => {
-    const threshold = 200; // 스와이프를 인식할 최소 이동 거리
+    // const threshold = 200; // 스와이프를 인식할 최소 이동 거리
     const deltaX = endX - startX;
 
     if (Math.abs(deltaX) > threshold) {
@@ -39,6 +39,6 @@ export const useSwipe = (prevAction: () => void, nextAction: () => void) => {
     handleMouseDown,
     handleMouseMove,
     handleMouseUp,
-    moveDistance: startX-endX,
+    moveDistance: startX - endX,
   }
 }
