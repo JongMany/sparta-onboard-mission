@@ -15,6 +15,7 @@ import {ShowTimeTable} from "@/components/game/show-time-table";
 import {EmployedSeniorInterviewSection} from "@/components/game/employed-senior-interview";
 import {ConsultationSection} from "@/components/game/consultation";
 import {PortfolioProcessSection} from "@/components/game/portfolio-process";
+import {PartnerCompanySection} from "../../components/game/partner-company";
 
 const GameLandingPage = () => {
   return (
@@ -34,7 +35,7 @@ const GameLandingPage = () => {
         <EmployedSeniorInterviewSection/>
         <ConsultationSection/>
         <PortfolioProcessSection/>
-            <PartnerCompanySection/>
+        <PartnerCompanySection />
         <div className={"w-full fixed bottom-[100px] z-20"}>
           <ContactUsFloatingButton/>
         </div>
