@@ -16,6 +16,7 @@ import {EmployedSeniorInterviewSection} from "@/components/game/employed-senior-
 import {ConsultationSection} from "@/components/game/consultation";
 import {PortfolioProcessSection} from "@/components/game/portfolio-process";
 import {PartnerCompanySection} from "../../components/game/partner-company";
+import {PriceInformationSection} from "@/components/game/price-information";
 
 const GameLandingPage = () => {
   return (
@@ -35,7 +36,8 @@ const GameLandingPage = () => {
         <EmployedSeniorInterviewSection/>
         <ConsultationSection/>
         <PortfolioProcessSection/>
-        <PartnerCompanySection />
+        <PartnerCompanySection/>
+        <PriceInformationSection/>
         <div className={"w-full fixed bottom-[100px] z-20"}>
           <ContactUsFloatingButton/>
         </div>

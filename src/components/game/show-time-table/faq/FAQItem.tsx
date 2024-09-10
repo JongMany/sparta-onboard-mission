@@ -1,6 +1,6 @@
 import React from 'react';
-import {DownArrow} from "@/components/shared/icon/DownArrow";
-import {UpArrow} from "@/components/shared/icon/UpArrow";
+import {DownArrowIcon} from "@/components/shared/icon/DownArrowIcon";
+import {UpArrowIcon} from "@/components/shared/icon/UpArrowIcon";
 
 type Props = {
   question: string;
@@ -14,7 +14,7 @@ export const FAQItem = ({question, answers, isOpened, onClick}: Props) => {
         <div className={"flex font-[600] text-[16px] leading-[26px] text-[rgb(20,22,23)]"} onClick={onClick}>
           <p className={"text-[rgb(255,108,122)]"}>Q.</p>
           <p className={"w-full mr-[12px] ml-[8px] text-[rgb(58,62,65)]"}>{question}</p>
-          {isOpened ? <UpArrow/> : <DownArrow/>}
+          {isOpened ? <UpArrowIcon/> : <DownArrowIcon/>}
         </div>
         {/* 숨은 아이템 */}
         {isOpened && <div className={"flex flex-col gap-[4px] pl-[22px]"}>

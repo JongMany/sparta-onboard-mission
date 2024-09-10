@@ -3,8 +3,8 @@
 import {useState} from "react";
 import Image from "next/image";
 
-import {UpArrow} from "@/components/shared/icon/UpArrow";
-import {DownArrow} from "@/components/shared/icon/DownArrow";
+import {UpArrowIcon} from "@/components/shared/icon/UpArrowIcon";
+import {DownArrowIcon} from "@/components/shared/icon/DownArrowIcon";
 
 import PcCareerProgramImage1 from "@/assets/images/game/information/portfolio-process/career_program_1_pc.webp"
 import PcCareerProgramImage2 from "@/assets/images/game/information/portfolio-process/career_program_2_pc.webp"
@@ -67,7 +67,7 @@ export const PortfolioProcessAccordion = () => {
               </ul>
             </div>
             <div>
-              {selectedItemNumber === index ? <UpArrow/> : <DownArrow/>}
+              {selectedItemNumber === index ? <UpArrowIcon/> : <DownArrowIcon/>}
             </div>
           </div>
           {/*아마 모바일 */}
