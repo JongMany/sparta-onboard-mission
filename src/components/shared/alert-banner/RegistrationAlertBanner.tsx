@@ -4,29 +4,29 @@ import React, {useEffect, useState} from 'react';
 import Link from "next/link";
 import Image from "next/image";
 import SharedImage from "@/assets/images/shared/share-link-white.webp";
-import {useIsPc} from "@/hooks/shared/useIsPC";
 
 type Props = {
   text: string;
   rest: number;
   total: number;
+  startObserverId: string;
+  endObserverId:string;
 }
 
 
-export const RegistrationAlertBanner = ({text, rest, total}: Props) => {
+export const RegistrationAlertBanner = ({text, rest, total,startObserverId, endObserverId}: Props) => {
   const [isVisible, setIsVisible] = useState(false);
-  // const isPc = useIsPc();
-  console.log('isVisible', isVisible)
 
   useEffect(() => {
-    const gameProject = document.getElementById("gameProject");
-    const gameFAQ = document.getElementById("gameFaq");
+    const startObserveElem = document.getElementById(startObserverId);
+    const endObserveElem = document.getElementById(endObserverId);
 
     const startObserverOption: IntersectionObserverInit = {
       root: null, // 뷰포트를 기준으로
       rootMargin: '0px', // 추가적인 마진 값 없음
       threshold: [0], // 요소가 0% 화면에 보이기 시작하면 트리거
     } as IntersectionObserverInit;
+
     const endObserverOption: IntersectionObserverInit = {
       root: null,
       rootMargin: '0px',
@@ -35,7 +35,7 @@ export const RegistrationAlertBanner = ({text, rest, total}: Props) => {
 
     const handleStartIntersection = (entries: IntersectionObserverEntry[]) => {
       entries.forEach((entry) => {
-        if (entry.target.id === 'gameProject') {
+        if (entry.target.id === startObserverId) {
           if (entry.isIntersecting) {
             setIsVisible(true); // gameProject가 보이면 배너를 표시
           }
@@ -45,7 +45,7 @@ export const RegistrationAlertBanner = ({text, rest, total}: Props) => {
 
     const handleEndIntersection = (entries: IntersectionObserverEntry[]) => {
       entries.forEach((entry) => {
-        if (entry.target.id === 'gameFaq') {
+        if (entry.target.id === endObserverId) {
           // gameFAQ가 20% 이상 보이면 배너를 숨김
           if (entry.isIntersecting && entry.intersectionRatio >= 0.2) {
             setIsVisible(false); // 배너 숨김
@@ -58,20 +58,18 @@ export const RegistrationAlertBanner = ({text, rest, total}: Props) => {
     const startObserver = new IntersectionObserver(handleStartIntersection, startObserverOption);
     const endObserver = new IntersectionObserver(handleEndIntersection, endObserverOption);
 
-    if (gameProject) {
-      startObserver.observe(gameProject);
+    if (startObserveElem) {
+      startObserver.observe(startObserveElem);
     }
-    if (gameFAQ) {
-      endObserver.observe(gameFAQ);
+    if (endObserveElem) {
+      endObserver.observe(endObserveElem);
     }
 
-    // 페이지 로드 시 이미 gameProject가 보이는지 확인
-    if (gameProject && gameProject.getBoundingClientRect().top < window.innerHeight * 0.5) {
+    if (startObserveElem && startObserveElem.getBoundingClientRect().top < window.innerHeight * 0.5) {
       setIsVisible(true);
     }
 
-    // 페이지 로드 시 이미 gameFAQ가 보이는지 확인
-    if (gameFAQ && gameFAQ.getBoundingClientRect().top < window.innerHeight * 0.5) {
+    if (endObserveElem && endObserveElem.getBoundingClientRect().top < window.innerHeight * 0.5) {
       setIsVisible(false);
     }
 

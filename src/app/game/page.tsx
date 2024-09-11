@@ -53,7 +53,7 @@ const GameLandingPage = () => {
         <div className={"lg:hidden z-20 visible fixed bottom-[84px] h-[80px] min-h-[80px] right-[8px]"}>
           <MobileContactUsFloatingButton/>
         </div>
-        <RegistrationAlertBanner text={"🚀 올해 마지막 개강!"} rest={13} total={120}/>
+        <RegistrationAlertBanner text={"🚀 올해 마지막 개강!"} rest={13} total={120} startObserverId={"gameProject"} endObserverId={"gameFaq"}/>
       </>
   );
 };
