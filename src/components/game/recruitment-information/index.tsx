@@ -74,16 +74,16 @@ const applicationProcessList: ApplicationProcess[] = [
 export const RecruitmentInformationSection = () => {
   return (
       <section id={"gameRecruitmentInfo"} className={"relative"}>
-        <section id={"gameOverview"} className={"bg-[rgb(20,22,23)] py-[100px]"}>
-          <section className={"min-w-[328px] w-full mx-auto my-0 flex flex-col gap-[60px] max-w-[820px]"}>
-            <section className={"w-full flex flex-col gap-[60px]"}>
-              <div className={"flex flex-col gap-[20px]"}>
-                <h2 className={"relative font-[700] text-[32px] leading-[45px] whitespace-pre-wrap text-white"}>
+        <section id={"gameOverview"} className={"bg-[rgb(20,22,23)] lg:py-[100px] lg:px-0 py-[60px] px-[16px]"}>
+          <section className={"min-w-[328px] w-full mx-auto my-0 flex flex-col gap-[60px] max-w-[600px] lg:max-w-[820px]"}>
+            <section className={"w-full flex flex-col gap-[40px] lg:gap-[60px]"}>
+              <div className={"flex flex-col gap-[16px] lg:gap-[20px]"}>
+                <h2 className={"relative font-[700] text-[24px] lg:text-[32px] leading-[34px] lg:leading-[45px] whitespace-pre-wrap text-white"}>
                   게임 개발 부트캠프
                   <br/>
                   모집 개요
                 </h2>
-                <p className={"text-[rgb(157,167,174)] text-[16px] leading-[26px] font-[400]"}>
+                <p className={"text-[rgb(157,167,174)] text-[14px] lg:text-[16px] leading-[22px] lg:leading-[26px] font-[400]"}>
                   * 훈련을 위한 장비 대여 필요 시, 내부 대여 절차를 통해 대여가 가능합니다.
                 </p>
               </div>

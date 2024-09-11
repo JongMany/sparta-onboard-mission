@@ -4,10 +4,10 @@ import {SharedLinkButton} from "@/components/shared/button";
 export const ShareLinkSection = () => {
   return (
       <section id={"gameShareLink1"} className={"relative"}>
-        <section className={"flex justify-center items-center bg-[rgb(20,22,23)] pt-[40px] pb-[100px]"}>
-          <section className={"flex w-full min-w-[328px] gap-[20px] max-w-[820px] m-0 flex-row items-center"}>
-            <section className={"w-full flex flex-col items-start gap-[16px]"}>
-              <h2 className={"relative font-[600] text-[20px] leading-[26px] text-start whitespace-pre-wrap text-white"}>
+        <section className={"flex justify-center items-center bg-[rgb(20,22,23)] pt-[40px] pb-[80px] lg:pb-[100px]"}>
+          <section className={"flex w-full min-w-[328px] gap-[20px] max-w-[600px] lg:max-w-[820px] mx-[16px] lg:m-0 flex-col lg:flex-row items-center"}>
+            <section className={"w-full flex flex-col items-center lg:items-start gap-[8px] lg:gap-[16px]"}>
+              <h2 className={"relative font-[600] text-[18px] lg:text-[20px] leading-[25px] lg:leading-[26px] text-center lg:text-start whitespace-pre-wrap text-white"}>
                 주변에 게임 개발자를
                 <br/>
                 꿈꾸는 사람이 있다면?

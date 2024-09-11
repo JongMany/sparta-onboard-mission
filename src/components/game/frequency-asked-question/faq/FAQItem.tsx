@@ -11,11 +11,11 @@ type Props = {
 export const FAQItem = ({question, isOpened, onClick, children, isLast}: PropsWithChildren<Props>) => {
   return (
       <div className={"flex flex-col gap-[10px]"}>
-        <div className={`rounded-[12px] flex flex-col justify-center p-[20px] gap-[20px] ${isOpened?"bg-[rgb(246,249,250)]":""}`}>
+        <div className={`rounded-[12px] flex flex-col justify-center py-[10px] px-[16px] lg:p-[20px] gap-[16px] lg:gap-[20px] ${isOpened?"bg-[rgb(246,249,250)]":""}`}>
           <div className={"w-full flex flex-row items-center justify-between cursor-pointer"} onClick={onClick}>
             <div className={"flex flex-row gap-[8px]"}>
-              <p className={"text-[rgb(255,108,122)] font-[600] text-[20px] leading-[28px]"}>Q.</p>
-              <p className={"break-keep text-[rgb(20,22,23)] font-[600] text-[20px] leading-[28px]"}>{question}</p>
+              <p className={"text-[rgb(255,108,122)] font-[600] text-[16px] lg:text-[20px] leading-[22px] lg:leading-[28px]"}>Q.</p>
+              <p className={"break-keep text-[rgb(20,22,23)] font-[600] text-[16px] lg:text-[20px] leading-[22px] lg:leading-[28px]"}>{question}</p>
             </div>
             <div>
               {isOpened ? <UpArrowIcon/> : <DownArrowIcon/>}
