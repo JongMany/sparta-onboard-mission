@@ -84,15 +84,15 @@ export const EmployedSeniorInterviewSection = () => {
       <section className={"relative"} id={"gameEmployedSeniorInterview"}>
         <div id={"output"}>
           <section
-              className={"py-[100px] flex flex-col justify-center items-center overflow-hidden bg-[rgb(20,22,23)]"}>
-            <div className={"w-full flex flex-col justify-center max-w-[820px] items-start gap-[60px]"}>
+              className={"py-[80px] px-[16px] lg:py-[100px] lg:px-0 flex flex-col justify-center items-center overflow-hidden bg-[rgb(20,22,23)]"}>
+            <div className={"w-full flex flex-col justify-center max-w-[600px] lg:max-w-[820px] items-center lg:items-start gap-[40px] lg:gap-[60px]"}>
               <div className={"w-full self-start flex items-end justify-between gap-[20px]"}>
-                <div className={"flex flex-col justify-center items-start gap-[12px]"}>
-                  <h3 className={"relative font-[600] text-[20px] leading-[26px] text-[rgb(255,108,122)]"}>취업후기</h3>
-                  <h2 className={"relative whitespace-pre-wrap font-[700] text-[32px] leading-[45px] text-white"}>선배
+                <div className={"flex flex-col justify-center items-start lg:gap-[12px] gap-[8px]"}>
+                  <h3 className={"relative font-[600] text-[16px] lg:text-[20px] leading-[22px] lg:leading-[26px] text-[rgb(255,108,122)]"}>취업후기</h3>
+                  <h2 className={"relative whitespace-pre-wrap font-[700] text-[24px] lg:text-[32px] leading-[34px] lg:leading-[45px] text-white"}>선배
                     수료생들의<br/>취업 후기를 확인해 보세요</h2>
                 </div>
-                <div className={"flex items-start gap-[24px]"}>
+                <div className={"hidden lg:flex items-start gap-[24px]"}>
                   <button className={`${isInitial ? 'cursor-not-allowed opacity-20' : 'opacity-100'} text-white`}
                           disabled={isInitial} onClick={clickPrevButtonHandler}>
                     <LeftArrowIcon/>
