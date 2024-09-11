@@ -7,11 +7,12 @@ type Props = {
   jobName: string;
   jobIntroduction: string;
   jobWorks: string[];
+  className?: string;
 }
-export const CareerPathCard = ({imageUrl, jobName, jobIntroduction, jobWorks}: Props) => {
+export const CareerPathCard = ({imageUrl, jobName, jobIntroduction, jobWorks, className=""}: Props) => {
   return (
       <div
-          className={"ml-0 w-[252px] py-[24px] px-[16px] border-[1px] rounded-[12px] border-[rgb(168,43,62)] bg-[rgb(52,45,60)]"}>
+          className={`w-[280px] lg:w-[252px] p-[24px] lg:py-[24px] lg:px-[16px] border-[1px] rounded-[12px] border-[rgb(168,43,62)] bg-[rgb(52,45,60)] ${className}`}>
         <Image src={imageUrl} alt={"커리어 패스"} className={"text-transparent"} width={56} height={56}/>
         <div className={"text-white mt-[12px] mb-[8px]"}>{jobName}</div>
         <div className={"text-white text-[13px] leading-[20px]"}>{jobIntroduction}</div>

@@ -5,14 +5,15 @@ import QaRtan from "@/assets/images/game/information/career-path/developer.webp"
 
 export const CareerPathSection = () => {
   return <section id={"gameCareerPathComponent"} className={"relative"}>
-    <section id={"game-career-path"} className={"py-[100px] bg-[rgb(32,44,58)] overflow-hidden"}>
-      <section className={"flex flex-col gap-[40px] min-w-[328px] overflow-visible w-[796px] max-w-none mx-auto"}>
-        <div>
-          <h3 className={"relative font-[600] text-[20px] leading-[26px] text-[rgb(255,108,122)]"}>커리어 패스</h3>
-          <h2 className={"text-white font-[700] text-[32px] leading-[45px] pt-[12px]"}>4개월 뒤, 이런 직군으로 취업할 수 있어요.</h2>
+    <section id={"game-career-path"} className={"py-[80px] px-[16px] lg:py-[100px] lg:px-0 bg-[rgb(32,44,58)] overflow-hidden"}>
+      <section className={"flex flex-col gap-[40px] min-w-[328px] overflow-visible w-full lg:w-[796px] max-w-[600px] lg:max-w-none mx-auto my-0"}>
+        <div className={"lg:w-full w-[328px]"}>
+          <h3 className={"relative font-[600] text-[14px] lg:text-[20px] leading-[22px] lg:leading-[26px] text-[rgb(255,108,122)]"}>커리어 패스</h3>
+          <h2 className={"text-white font-[700] text-[24px] leading-[34px] lg:text-[32px] lg:leading-[45px] pt-[8px] lg:pt-[12px] whitespace-pre-wrap"}>{"4개월 뒤,\n이런 직군으로 취업할 수 있어요."}</h2>
         </div>
-        <div className={"flex gap-[20px] overflow-hidden w-[100vw] mx-auto static"}>
+        <div className={"flex gap-[20px] overflow-hidden w-[100vw] ml-[-50vw] mr-[-50vw] left-[50%] right-[50%] lg:mx-auto relative lg:static box-border"}>
           <CareerPathCard imageUrl={DeveloperRtan} jobName={"게임 개발자"} jobIntroduction={"개발 엔진을 사용하여 게임 개발"}
+                          className={"lg:ml-0 ml-[16px]"}
                                   jobWorks={["기능, 시스템, 물리 엔진, 그래픽스 개발", "C# 또는 UnityScript와 같은 스크립팅 언어를 사용한 로직 작성 및 구현", "게임의 에셋, 애니메이션, 사운드, 텍스처 등 리소스의 효율적 관리 및 사용"]}/>
           <CareerPathCard imageUrl={PmRtan} jobName={"게임 Tech PM"} jobIntroduction={"프로젝트의 기술적 목표 및 실행 계획 수립"}
                                   jobWorks={["개발자와 협업하여 원활한 프로젝트 진행 보장", "프로젝트의 일정, 예산, 리소스, 위험 요소 등을 관리하고, 진행 상황을 모니터링"]}/>
