@@ -4,15 +4,16 @@ import {DetailInformation} from "@/components/game/detailed-curriculum/detail-in
 export const DetailedCurriculumSection = () => {
   return (
       <section id={"gameCurriculum"} className={"relative"}>
-        <section className={"py-[100px] bg-[rgb(242,246,248)]"}>
-          <section className={"min-w-[328px] w-full mx-auto my-0 max-w-[820px]"}>
-            <h3 className={"relative font-[600] text-[20px] leading-[26px] text-[rgb(255,108,122)]"}>상세 커리큘럼</h3>
-            <h2 className={"relative font-[700] text-[32px] leading-[45px] text-[rgb(20,22,23)] pt-[12px] pb-[60px] whitespace-pre-wrap"}>
+        <section className={"px-[16px] py-[60px] lg:py-[100px] lg:px-0 bg-[rgb(242,246,248)]"}>
+          <section className={"min-w-[328px] w-full mx-auto my-0 max-w-[600px] lg:max-w-[820px]"}>
+            <h3 className={"relative font-[600] text-[14px] leading-[22px] lg:text-[20px] lg:leading-[26px] text-[rgb(255,108,122)]"}>상세 커리큘럼</h3>
+            <h2 className={"relative font-[700] text-[24px] leading-[34px] lg:text-[32px] lg:leading-[45px] text-[rgb(20,22,23)] pt-[8px] pb-[40px] lg:pt-[12px] lg:pb-[60px] whitespace-pre-wrap"}>
               기획부터 개발까지 경험하도록,
               <br/>
-              최신 트렌드를 반영한 커리큘럼</h2>
+              최신 트렌드를 반영한 커리큘럼
+            </h2>
             <div
-                className={"opacity-100 transition-opacity duration-150 ease-linear flex flex-col justify-center gap-[16px]"}>
+                className={"opacity-100 transition-opacity duration-150 ease-linear flex flex-col justify-center gap-[20px] lg:gap-[16px]"}>
               <AccordionItem title={"[01] 풀스택 미니 프로젝트 주차"}
                              description={"게임 개발 기초 강의를 수강하고 직접 미니 게임을 만들어 보며 협업의 경험을 쌓습니다."}
                              projectName={"팀원 TMI 카드 게임"}
