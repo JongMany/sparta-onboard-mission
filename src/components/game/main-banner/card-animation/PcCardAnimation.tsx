@@ -20,7 +20,7 @@ const PcCardAnimation = () => {
 
 
   return (
-      <div className={"absolute h-[289px] min-w-[1440px] flex justify-center items-center gap-[20px]"}>
+      <div className={`hidden lg:absolute lg:h-[289px] lg:min-w-[1440px] lg:flex lg:justify-center lg:items-center lg:gap-[20px]`}>
         <Image src={RemoteControl} alt={"게임이미지1"} fetchPriority={"high"} width={277} height={289}
                className={`aspect-mainBannerPCImageRatio ${flipped ? styles.flip0 : styles.card0}`}/>
         <Image src={Shield} alt={"게임이미지2"} fetchPriority={"high"} width={277} height={289}

@@ -49,10 +49,21 @@ const config: Config = {
           '0%': {opacity: '1'},
           '100%': {opacity: '0'},
         },
+        slide: {
+          '0%': {transform: 'translateX(0%)'},
+          '100%': {transform: 'translateX(-100%)'},
+        },
+        slide2: {
+          '0%': {transform: 'translateX(100%)'},
+          '100%': {transform: 'translateX(0%)'},
+        },
       },
       animation: {
         fadeIn: 'fadeIn 0.15s linear',
         fadeOut: 'fadeOut 0.15s linear',
+        slide: 'slide 12s linear infinite',
+        slide2: 'slide2 12s linear infinite'
+
       },
       transitionTimingFunction: {
         'swiper': 'var(--swiper-wrapper-transition-timing-function, initial)',
