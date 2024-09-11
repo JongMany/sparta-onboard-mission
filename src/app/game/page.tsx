@@ -47,7 +47,7 @@ const GameLandingPage = () => {
         <RecruitmentInformationSection/>
         <ShareLinkSection/>
         <FAQSection/>
-        <div className={"hidden lg:w-full lg:fixed lg:bottom-[100px] lg:z-20"}>
+        <div className={"hidden lg:w-full lg:fixed lg:bottom-[100px] lg:z-20 lg:block"}>
           <PcContactUsFloatingButton/>
         </div>
         <div className={"lg:hidden z-20 visible fixed bottom-[84px] h-[80px] min-h-[80px] right-[8px]"}>

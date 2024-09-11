@@ -10,11 +10,11 @@ type Props = {
   rest: number;
   total: number;
   startObserverId: string;
-  endObserverId:string;
+  endObserverId: string;
 }
 
 
-export const RegistrationAlertBanner = ({text, rest, total,startObserverId, endObserverId}: Props) => {
+export const RegistrationAlertBanner = ({text, rest, total, startObserverId, endObserverId}: Props) => {
   const [isVisible, setIsVisible] = useState(false);
 
   useEffect(() => {
@@ -35,9 +35,16 @@ export const RegistrationAlertBanner = ({text, rest, total,startObserverId, endO
 
     const handleStartIntersection = (entries: IntersectionObserverEntry[]) => {
       entries.forEach((entry) => {
+        console.log(entry.intersectionRatio)
         if (entry.target.id === startObserverId) {
-          if (entry.isIntersecting) {
-            setIsVisible(true); // gameProject가 보이면 배너를 표시
+          if (entry.isIntersecting && entry.intersectionRatio > 0) {
+            // 요소가 화면에 일부라도 보이면 배너를 표시
+            setIsVisible(true);
+          } else if (startObserveElem && startObserveElem.getBoundingClientRect().top < window.innerHeight * 0.5) {
+            setIsVisible(true);
+          } else if (!entry.isIntersecting) {
+            // 요소가 화면에서 완전히 사라지면 배너를 숨김
+            setIsVisible(false);
           }
         }
       });
@@ -49,6 +56,8 @@ export const RegistrationAlertBanner = ({text, rest, total,startObserverId, endO
           // gameFAQ가 20% 이상 보이면 배너를 숨김
           if (entry.isIntersecting && entry.intersectionRatio >= 0.2) {
             setIsVisible(false); // 배너 숨김
+          } else {
+            setIsVisible(true);
           }
         }
       });
