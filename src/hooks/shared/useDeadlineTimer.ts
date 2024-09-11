@@ -26,7 +26,6 @@ export const useDeadlineTimer = (deadline:Date) => {
         const hours = Math.floor((timeDiff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
         const minutes = Math.floor((timeDiff % (1000 * 60 * 60)) / (1000 * 60));
         const seconds = Math.floor((timeDiff % (1000 * 60)) / 1000);
-        console.log(days, hours, minutes, seconds)
         setTimeRemaining({
           days,
           hours,

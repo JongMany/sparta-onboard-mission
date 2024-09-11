@@ -16,10 +16,6 @@ const developmentMenuList = [
     isRecruit: true,
     link: '/android'
   },{
-    field: '앱 창업',
-    isRecruit: true,
-    link: '/venture'
-  },{
     field: 'iOS 앱 개발',
     isRecruit: true,
     link: '/ios'
