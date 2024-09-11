@@ -1,10 +1,10 @@
 "use client";
 import React, {useEffect, useState} from 'react';
 import Image from "next/image";
-import NineToTenImage from "@/assets/images/game/information/time-table/nineToTen.webp";
-import TenToFifteenImage from "@/assets/images/game/information/time-table/tenToFifteen.webp";
-import FifteenToTwentyImage from "@/assets/images/game/information/time-table/fifteenToTwenty.webp";
-import TwentyToTwentyOneImage from "@/assets/images/game/information/time-table/twentyToTwentyOne.webp";
+import NineToTenImage from "@/assets/images/game/information/time-table/pc/nineToTen.webp";
+import TenToFifteenImage from "@/assets/images/game/information/time-table/pc/tenToFifteen.webp";
+import FifteenToTwentyImage from "@/assets/images/game/information/time-table/pc/fifteenToTwenty.webp";
+import TwentyToTwentyOneImage from "@/assets/images/game/information/time-table/pc/twentyToTwentyOne.webp";
 
 type EducationTime = '9-10' | '10-15' | '15-20' | '20-21'
 export const InformationByTime = () => {
@@ -25,7 +25,7 @@ export const InformationByTime = () => {
   }
 
   return (
-      <div className={"flex flex-col gap-[28px]"}>
+      <div className={"hidden lg:flex lg:flex-col lg:gap-[28px]"}>
         <div className={"flex gap-[8px] border-b-[1px] border-[rgb(228,235,240)]"}>
           <div
               className={`p-[8px] text-[15px] font-[700] leading-[26px] cursor-pointer text-[rgb(180,191,198)] ${selectEducationTime === "9-10" ? "border-b-2 border-[rgb(255,108,122)] text-[rgb(255,108,122)]" : ""}`}
