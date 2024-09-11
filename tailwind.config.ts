@@ -68,6 +68,9 @@ const config: Config = {
       transitionTimingFunction: {
         'swiper': 'var(--swiper-wrapper-transition-timing-function, initial)',
       },
+      screens: {
+        tablet: '600px'
+      }
     },
   },
   plugins: [require("tailwind-scrollbar-hide"), require("@xpd/tailwind-3dtransforms")],
