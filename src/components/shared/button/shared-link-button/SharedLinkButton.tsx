@@ -1,5 +1,5 @@
 import React from 'react';
-import SharedLink from "@/assets/images/shared/share-link.webp";
+import SharedLink from "@/assets/images/shared/share-link-gray.webp";
 import Image from "next/image";
 
 export const SharedLinkButton = () => {

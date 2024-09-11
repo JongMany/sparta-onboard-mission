@@ -38,7 +38,8 @@ const config: Config = {
             'accordion-shadow': '0px 8px 24px rgba(129, 137, 143, 0.12)',
             'dropdown-menu': '0 8px 24px 0 rgba(95, 102, 107, 0.12)',
             'video-item': 'rgba(0, 0, 0, 0.25) 0px 24px 54px 0px',
-            'interview-item': 'rgba(129, 137, 143, 0.12) 0px 8px 24px 0px'
+            'interview-item': 'rgba(129, 137, 143, 0.12) 0px 8px 24px 0px',
+            'alert-banner':'rgba(0, 0, 0, 0.24) 0px 4px 24px 0px',
           },
           keyframes: {
             fadeIn: {

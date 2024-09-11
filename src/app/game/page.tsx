@@ -22,6 +22,7 @@ import {ShareLinkSection} from "@/components/game/share-link";
 
 import {PartnerCompanySection} from "@/components/game/partner-company";
 import {FAQSection} from "@/components/game/frequency-asked-question";
+import {RegistrationAlertBanner} from "@/components/shared/alert-banner/RegistrationAlertBanner";
 
 const GameLandingPage = () => {
   return (
@@ -50,8 +51,9 @@ const GameLandingPage = () => {
           <PcContactUsFloatingButton/>
         </div>
         <div className={"lg:hidden z-20 visible fixed bottom-[84px] h-[80px] min-h-[80px] right-[8px]"}>
-          <MobileContactUsFloatingButton />
+          <MobileContactUsFloatingButton/>
         </div>
+        <RegistrationAlertBanner text={"🚀 올해 마지막 개강!"} rest={13} total={120}/>
       </>
   );
 };
