@@ -4,7 +4,7 @@ import ThumbsUp from "@/assets/images/shared/thumbs-up.webp";
 import Image from "next/image";
 import {useSwipe} from "@/hooks/shared/useSwipe";
 
-const projectResultList = [
+const pcProjectResultList = [
   {
     num: 0,
     title: 'War on the Zombie',
@@ -44,12 +44,12 @@ const unitOfTranslate = 1150;
 
 // 35 -1115 -2165
 // 0, 1150, 2300
-const ProjectResultCarousel = () => {
+const PcProjectResultCarousel = () => {
   const [activeProjectNumber, setActiveProjectNumber] = useState(0);
   const [swiped, setSwiped] = useState(false);
 
   const isInitial = activeProjectNumber === 0;
-  const isEnd = activeProjectNumber === projectResultList.length - 1;
+  const isEnd = activeProjectNumber === pcProjectResultList.length - 1;
 
   useEffect(() => {
     if (swiped) {
@@ -74,7 +74,7 @@ const ProjectResultCarousel = () => {
   const containerTranslateValue = -unitOfTranslate * activeProjectNumber + 35 - moveDistance;
 
   return (
-      <section className={"flex flex-col gap-[40px]"}>
+      <section className={"hidden lg:flex lg:flex-col lg:gap-[40px]"}>
         {/*TODO: Swiper 추가하기*/}
         {/* Swiper */}
         <div
@@ -91,7 +91,7 @@ const ProjectResultCarousel = () => {
               onTouchMove={handleMouseMove}
               onTouchEnd={handleMouseUp}
           >
-            {projectResultList.map((item, idx) => {
+            {pcProjectResultList.map((item, idx) => {
               let currentState = getCurrentCarouselState(item.num, activeProjectNumber);
               const diff = Math.abs(item.num - activeProjectNumber);
               const zIndex = zIndexDepth[diff];
@@ -179,4 +179,4 @@ const getCorrectionValueByCurrentState = (currentState: 'prev' | 'active' | 'nex
   }
 }
 
-export default ProjectResultCarousel;
+export default PcProjectResultCarousel;
