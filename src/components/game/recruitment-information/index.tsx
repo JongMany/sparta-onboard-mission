@@ -12,8 +12,11 @@ import ResultImage from "@/assets/images/game/information/recruitment-informatio
 import CommunityImage from "@/assets/images/game/information/recruitment-information/community.webp"
 import CheckImage from "@/assets/images/game/information/recruitment-information/check.webp";
 import {
-  ProcessInformationContainer
-} from "@/components/game/recruitment-information/process-information-item/ProcessInformationContainer";
+  PcProcessInformationContainer
+} from "@/components/game/recruitment-information/process-information-item/PcProcessInformationContainer";
+import {
+  MobileProcessInformationContainer
+} from "@/components/game/recruitment-information/process-information-item/MobileProcessInformationContainer";
 
 export type RecruitmentInformation = {
   label: string;
@@ -47,25 +50,25 @@ const applicationProcessList: ApplicationProcess[] = [
   {
     step: "서류 지원",
     additionalInformation: "24.09.12(목) 23:59까지",
-    description: "내일배움캠프 지원 동기를 간단히 작성해주세요.",
+    description: "내일배움캠프 지원 동기를\n간단히 작성해주세요.",
     icon: WritingImage, // 아이콘 이름 또는 경로
   },
   {
     step: "결과 발표",
     additionalInformation: "제출 후, 2일 이내 결과 안내",
-    description: "꼼꼼히 살펴보고 빠르게 결과를 알려드릴게요.",
+    description: "꼼꼼히 살펴보고\n빠르게 결과를 알려드릴게요.",
     icon: ResultImage,
   },
   {
     step: "합격자 공지방 입장",
     additionalInformation: "내일배움캠프 프라이빗 커뮤니티",
-    description: "합격하신 분들을 위한 특별한 혜택이 있을지도 몰라요.",
+    description: "합격하신 분들을 위한\n특별한 혜택이 있을지도 몰라요.",
     icon: CommunityImage,
   },
   {
     step: "최종 합류",
     additionalInformation: "HRD-Net 수강 신청",
-    description: "HRD-Net 등록을 마무리하면, 4개월간의 여정이 시작돼요.",
+    description: "HRD-Net 등록을 마무리하면,\n4개월간의 여정이 시작돼요.",
     icon: CheckImage,
   },
 ];
@@ -94,15 +97,20 @@ export const RecruitmentInformationSection = () => {
             </section>
             <section className={"w-full flex flex-col gap-[40px]"}>
               <h4 className={"whitespace-pre-wrap text-white font-[700] text-[32px] leading-[45px]"}>지원 절차</h4>
-              <div className={"flex gap-[40px] w-full relative flex-row"}>
+              <div className={"flex gap-[40px] w-full relative flex-col lg:flex-row"}>
                 <Image src={PcLineImage} alt={""} width={820} height={50}
-                       className={"absolute text-transparent"}/>
+                       className={"hidden lg:absolute lg:text-transparent lg:block"}/>
                 {/* 모바일 */}
-                <Image src={""} alt={""} width={820} height={50} className={"hidden absolute text-transparent"}/>
+                <Image src={MobileLineImage} alt={""} width={50} height={520} className={"lg:hidden block absolute text-transparent"}/>
                 {
-                  applicationProcessList.map((item, index) => <ProcessInformationContainer icon={item.icon} step={item.step} description={item.description}>
-                    <ProcessInformationContainer.AdditionalInformation className={`${index === 0 ? "text-[rgb(255,108,122)]" : "text-white"} text-[13px] leading-[20px] font-[400] mt-[6px]`} information={item.additionalInformation} />
-                  </ProcessInformationContainer>)
+                  applicationProcessList.map((item, index) => <MobileProcessInformationContainer icon={item.icon} step={item.step} description={item.description}>
+                    <MobileProcessInformationContainer.AdditionalInformation className={`${index === 0 ? "text-[rgb(255,108,122)]" : "text-white"} text-[12px] leading-[18px] font-[400] mt-[6px]`} information={item.additionalInformation} />
+                  </MobileProcessInformationContainer>)
+                }
+                {
+                  applicationProcessList.map((item, index) => <PcProcessInformationContainer icon={item.icon} step={item.step} description={item.description}>
+                    <PcProcessInformationContainer.AdditionalInformation className={`${index === 0 ? "text-[rgb(255,108,122)]" : "text-white"} text-[12px] leading-[18px] font-[400] mt-[6px]`} information={item.additionalInformation} />
+                  </PcProcessInformationContainer>)
                 }
               </div>
             </section>

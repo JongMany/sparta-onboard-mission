@@ -1,17 +1,17 @@
 import React, {PropsWithChildren} from 'react';
 import Image from "next/image";
 import {
-  AdditionalInformation
-} from "@/components/game/recruitment-information/process-information-item/AdditionalInformation";
+  PcAdditionalInformation
+} from "@/components/game/recruitment-information/process-information-item/PcAdditionalInformation";
 
 type Props = {
   icon: string;
   step: string;
   description: string;
 }
-export const ProcessInformationContainer = ({icon, step, description, children}: PropsWithChildren<Props>) => {
+export const PcProcessInformationContainer = ({icon, step, description, children}: PropsWithChildren<Props>) => {
   return (
-      <div className={"flex flex-col w-[175px] items-center justify-center"}>
+      <div className={"hidden lg:flex flex-col w-[175px] items-center justify-center"}>
         <Image src={icon} alt={"서류지원"} width={50} height={50}/>
         <h4 className={"text-white mt-[24px] leading-[29px] text-[18px] font-[600]"}>{step}</h4>
         {children}
@@ -20,5 +20,5 @@ export const ProcessInformationContainer = ({icon, step, description, children}:
   );
 };
 
-ProcessInformationContainer.AdditionalInformation = AdditionalInformation;
+PcProcessInformationContainer.AdditionalInformation = PcAdditionalInformation;
 

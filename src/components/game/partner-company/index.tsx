@@ -12,7 +12,7 @@ export const PartnerCompanySection = () => {
             <h3 className={"relative font-[600] text-[14px] lg:text-[20px] leading-[22px] lg:leading-[26px] text-[rgb(255,108,122)]"}>협력사</h3>
             <h2 className={"font-[700] text-[24px] lg:text-[32px] leading-[34px] lg:leading-[45px] pt-[8px] lg:pt-[12px] pb-[40px] lg:pb-[60px] text-[rgb(20,22,23)] whitespace-pre-wrap"}>자체 채용 플랫폼에서<br/>
               1,000여개의 기업이 함께합니다.</h2>
-            <div className={"hidden lg:w-[796px] lg:h-[245px] lg:relative"}>
+            <div className={"hidden lg:w-[796px] lg:h-[245px] lg:relative lg:block"}>
               <Image src={PcPartnerCompanyImage} alt={"협력사"} className={"absolute h-full w-full inset-0 text-transparent"} />
             </div>
 

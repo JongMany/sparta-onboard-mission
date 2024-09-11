@@ -1,5 +1,5 @@
 "use client";
-import React, {useEffect, useState} from 'react';
+import React, { useState} from 'react';
 import Image from "next/image";
 import NineToTenImage from "@/assets/images/game/information/time-table/pc/nineToTen.webp";
 import TenToFifteenImage from "@/assets/images/game/information/time-table/pc/tenToFifteen.webp";
