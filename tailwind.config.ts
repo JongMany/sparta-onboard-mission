@@ -72,6 +72,9 @@ const config: Config = {
               }
             },
           },
+          dropShadow: {
+            'floating-button': '0px 13.5px 16.2px rgba(20, 22, 23, 0.24)', // 커스텀 drop-shadow 설정
+          },
 
           animation: {
             fadeIn: 'fadeIn 0.15s linear',

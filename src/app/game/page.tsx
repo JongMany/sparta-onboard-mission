@@ -1,5 +1,5 @@
 import React from 'react';
-import {ContactUsFloatingButton} from "@/components/shared/contact-us-floating-button";
+import {MobileContactUsFloatingButton, PcContactUsFloatingButton} from "@/components/shared/contact-us-floating-button";
 import {MainBanner} from "@/components/game/main-banner";
 import SubNavbar from "@/components/game/sub-navbar";
 import {CountdownBanner} from "@/components/game/countdown-banner";
@@ -41,13 +41,16 @@ const GameLandingPage = () => {
         <EmployedSeniorInterviewSection/>
         <ConsultationSection/>
         <PortfolioProcessSection/>
-        <PartnerCompanySection />
+        <PartnerCompanySection/>
         <PriceInformationSection/>
         <RecruitmentInformationSection/>
         <ShareLinkSection/>
-        <FAQSection />
-        <div className={"w-full fixed bottom-[100px] z-20"}>
-          <ContactUsFloatingButton/>
+        <FAQSection/>
+        <div className={"hidden lg:w-full lg:fixed lg:bottom-[100px] lg:z-20"}>
+          <PcContactUsFloatingButton/>
+        </div>
+        <div className={"lg:hidden z-20 visible fixed bottom-[84px] h-[80px] min-h-[80px] right-[8px]"}>
+          <MobileContactUsFloatingButton />
         </div>
       </>
   );
