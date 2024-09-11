@@ -49,12 +49,12 @@ const SubNavbar = () => {
           <div className={"flex flex-col justify-center items-center gap-[10px]"}>
             <button
                 onClick={() => scrollToSection('gameCareerSupport')}
-                className={"whitespace-nowrap flex py-[6px] px-[10px] justify-center items-center gap-[10px] font-[400] text-[16px] leading-[26px] text-[rgb(157,167,174)] transition duration-300 ease-in-out rounded-[10px] relative hover:bg-[rgb(242,246,248)] hover:text-[rgb(58,62,65)]"}>취업
-              지원
+                className={"whitespace-nowrap flex py-[6px] px-[10px] justify-center items-center gap-[10px] font-[400] text-[16px] leading-[26px] text-[rgb(157,167,174)] transition duration-300 ease-in-out rounded-[10px] relative hover:bg-[rgb(242,246,248)] hover:text-[rgb(58,62,65)]"}>취업 지원
             </button>
-            <div></div>
+            <div
+                className={"w-full h-[2px] bg-[rgb(255,108,122)] opacity-0 transition-opacity duration-300 ease-in-out"}></div>
           </div>
-          <div>
+          <div className={"flex flex-col justify-center items-center gap-[10px]"}>
             <button
                 onClick={() => scrollToSection('gameOverview')}
                 className={"whitespace-nowrap flex py-[6px] px-[10px] justify-center items-center gap-[10px] font-[400] text-[16px] leading-[26px] text-[rgb(157,167,174)] transition duration-300 ease-in-out rounded-[10px] relative hover:bg-[rgb(242,246,248)] hover:text-[rgb(58,62,65)]"}>모집개요

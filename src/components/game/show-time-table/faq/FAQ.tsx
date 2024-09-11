@@ -31,7 +31,7 @@ export const FAQ = () => {
   const [allShow, setAllShow] = useState(false);
   const [toggleFAQState, setToggleFAQState] = useState([false, false, false, false, false, false]);
   const toggleAllShow = () => {
-    if(allShow) {
+    if (allShow) {
       setToggleFAQState(prev => prev.map(() => false))
     } else {
       setToggleFAQState(prev => prev.map(() => true))
@@ -45,7 +45,7 @@ export const FAQ = () => {
 
 
   return (
-      <section className={"flex flex-col gap-[40px] mt-[100px] pt-[20px] px-[16px]"}>
+      <section className={"flex flex-col gap-[40px] mt-[40px] lg:mt-[100px] pt-[20px] px-[4px] lg:px-[16px]"}>
         <section className={"flex justify-between"}>
           <h4 className={"font-[600] text-[18px] leading-[29px] text-[rgb(20,22,23)]"}>관련 자주 묻는 질문</h4>
           <div
@@ -64,6 +64,7 @@ export const FAQ = () => {
         <section className={"flex flex-col gap-[20px]"}>
           {FAQList.map((item, index) => <FAQItem key={item.question} question={item.question} answers={item.answers}
                                                  isOpened={toggleFAQState[index]}
+                                                 isLast={index === FAQList.length - 1}
                                                  onClick={toggleFAQStateHandler(index)}/>)}
         </section>
       </section>
