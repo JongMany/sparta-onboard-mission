@@ -7,7 +7,7 @@ type Props = {
 }
 export const ReviewAndBlogDropdownMenu = ({isHover}: Props) => {
   return (
-      <DropdownMenuContainer isHover={isHover}>
+      <DropdownMenuContainer isHover={isHover} >
         <div className={"flex w-[140px] flex-col items-start gap-[6px]"}>
           <Link
               href={'https://nbcamp.spartacodingclub.kr/blog/category/%EC%B7%A8%EC%97%85%EC%84%B1%EA%B3%B5%ED%9B%84%EA%B8%B0'}

@@ -22,16 +22,18 @@ export function MainHeader() {
 
   // scroll 방향이 아래면 숨겨짐, scroll 방향이 위면 보여짐
   return <nav
-      className={`fixed w-full h-fit backdrop-blur-[10px] border-b-[1px] border-b-[#e4ebf0] flex flex-col justify-center items-center z-[21] transition-all duration-300 ease ${direction === "down" ? 'hidden' : ''} bg-white`}>
+      className={`fixed w-full h-fit backdrop-blur-[10px] border-b-[1px] border-b-[#e4ebf0] flex flex-col justify-center items-center z-[21] transition-all duration-300 ease ${direction === "down" ? 'hidden' : ''} bg-white`}
+      onMouseLeave={activeDropdownMenuHandler('none')}>
     <div className={"px-6 h-[60px] w-full flex items-center justify-between max-w-[1200px]"}>
-      <div className={"flex items-center gap-[40px]"}>
-        <Link href={'/'} className={"min-h-[50.5px]"}>
+      <div className={"flex items-center gap-[40px]"} onMouseEnter={activeDropdownMenuHandler('none')}>
+        <Link href={'/'} className={"min-h-[50.5px]"} onMouseEnter={activeDropdownMenuHandler('none')}>
           <Image className={"mt-[3px]"} src={NewLogo} alt={"스파르타 내일배움캠프"} width={134} height={40}/>
         </Link>
+        {/* 링크 */}
         <div className={"flex gap-[8px]"}>
           <div data-is-hover={currentActiveDropdown === "bootcamp"}
                className={"relative px-[10px] py-[6px] hover:bg-hoverGreyColor hover:rounded-[6px]"}
-               onMouseEnter={activeDropdownMenuHandler('bootcamp')} onMouseLeave={activeDropdownMenuHandler('none')}>
+               onMouseEnter={activeDropdownMenuHandler('bootcamp')} >
             <div className={"flex gap-[4px] cursor-pointer items-center"}>
               <span>부트캠프</span>
               <span>
@@ -41,14 +43,15 @@ export function MainHeader() {
               </span>
             </div>
             {/*  모달 들어갈 자리*/}
-            <BootcampDropdownMenu isHover={currentActiveDropdown === "bootcamp"}/>
+            <BootcampDropdownMenu isHover={currentActiveDropdown === "bootcamp"} />
           </div>
           <Link href={"/job-support"} data-isHover={false}
+                onMouseEnter={activeDropdownMenuHandler('none')}
                 className={"flex items-center gap-[4px] px-[10px] py-[6px] hover:bg-hoverGreyColor hover:rounded-[6px]"}>취업
             지원</Link>
           <div data-is-hover={currentActiveDropdown === "review"}
                className={"relative px-[10px] py-[6px] hover:bg-hoverGreyColor hover:rounded-[6px]"}
-               onMouseEnter={activeDropdownMenuHandler('review')} onMouseLeave={activeDropdownMenuHandler('none')}>
+               onMouseEnter={activeDropdownMenuHandler('review')} >
             <div className={"flex gap-[4px] cursor-pointer items-center "}>
               <span>후기&블로그</span>
               <span>
@@ -57,14 +60,16 @@ export function MainHeader() {
               </span>
             </div>
             {/*  모달 들어갈 자리*/}
-            <ReviewAndBlogDropdownMenu isHover={currentActiveDropdown === "review"}/>
+            <ReviewAndBlogDropdownMenu isHover={currentActiveDropdown === "review"} />
           </div>
           <Link href={"/event"}
+                onMouseEnter={activeDropdownMenuHandler('none')}
                 className={"flex items-center gap-[4px] px-[10px] py-[6px] hover:bg-hoverGreyColor hover:rounded-[6px]"}>이벤트</Link>
         </div>
       </div>
+      {/* 링크 2 */}
       <div className={"flex gap-[8px] items-center"}>
-        <span className={"text-fontGray cursor-pointer hover:bg-hoverGreyColor hover:rounded-[6px]"}>
+        <span className={"text-fontGray cursor-pointer hover:bg-hoverGreyColor hover:rounded-[6px]"} onMouseEnter={activeDropdownMenuHandler('none')}>
           <Link href={"/mypage/apply-status"}>
             <div className={"relative px-[10px] py-[6px] "}>나의 캠프</div>
           </Link>
@@ -73,16 +78,16 @@ export function MainHeader() {
         <div data-is-hover={currentActiveDropdown === "customerCenter"}
              className={"relative flex gap-[4px] items-center px-[10px] py-[6px] hover:bg-hoverGreyColor hover:rounded-[6px]"}
              onMouseEnter={activeDropdownMenuHandler('customerCenter')}
-             onMouseLeave={activeDropdownMenuHandler('none')}>
+             >
           <div className={"text-fontGray cursor-pointer flex gap-[4px] items-center"}>
             <span>고객센터</span>
             <span>
               {currentActiveDropdown === "customerCenter" ? <UpArrowIcon strokeColor={"#81898F"}/> :
                   <DownArrowIcon strokeColor={"#81898F"}/>}
             </span>
+            {/*  모달 들어갈 자리*/}
+            <CustomerCenterDropdownMenu isHover={currentActiveDropdown === "customerCenter"}/>
           </div>
-          {/*  모달 들어갈 자리*/}
-          <CustomerCenterDropdownMenu isHover={currentActiveDropdown === "customerCenter"}/>
         </div>
       </div>
 

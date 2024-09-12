@@ -5,9 +5,10 @@ import {DropdownMenuContainer} from "@/components/shared/main-header/dropdown-me
 type Props = {
   isHover: boolean;
 }
+
 export const CustomerCenterDropdownMenu = ({isHover}:Props) => {
   return (
-      <DropdownMenuContainer isHover={isHover}>
+      <DropdownMenuContainer isHover={isHover} >
         <div className={"flex w-[140px] flex-col items-start gap-[6px]"}>
           <Link
               href={'https://support.spartacodingclub.kr/faqs?product=%EB%82%B4%EC%9D%BC%EB%B0%B0%EC%9B%80%EC%BA%A0%ED%94%84'}

@@ -1,7 +1,7 @@
 import React, {PropsWithChildren} from 'react';
 
 type Props = {
-  isHover: boolean
+  isHover: boolean;
 }
 export const DropdownMenuContainer = ({isHover, children}: PropsWithChildren<Props>) => {
   return (
