@@ -29,10 +29,10 @@ export const scrollToSection = (id: string) => {
   const startPosition = window.scrollY; // 현재 스크롤 위치
   const distance = targetPosition - startPosition; // 이동해야 할 거리
   const duration = 800; // 애니메이션 시간 (ms)
-  let startTime = null;
+  let startTime: number|null = null;
 
   // 스크롤 애니메이션 함수
-  const animateScroll = (currentTime) => {
+  const animateScroll = (currentTime:number) => {
     if (startTime === null) startTime = currentTime;
     const timeElapsed = currentTime - startTime;
     const run = ease(timeElapsed, startPosition, distance, duration);
@@ -43,7 +43,7 @@ export const scrollToSection = (id: string) => {
   };
 
   // 부드러운 스크롤을 위한 ease 함수 (가속도 곡선)
-  const ease = (t, b, c, d) => {
+  const ease = (t:number, b:number, c:number, d:number) => {
     t /= d / 2;
     if (t < 1) return (c / 2) * t * t + b;
     t--;

@@ -32,7 +32,7 @@ export const RecruitmentInformationSection = () => {
                 </p>
               </div>
               <div className={"flex flex-col gap-[24px]"}>
-                {recruitmentInformationList.map((item, index) => <RecruitmentInformationItem information={item}
+                {recruitmentInformationList.map((item, index) => <RecruitmentInformationItem key={item.label} information={item}
                                                                                              isLast={index === recruitmentInformationList.length - 1}/>)}
               </div>
             </section>
@@ -44,12 +44,12 @@ export const RecruitmentInformationSection = () => {
                 {/* 모바일 */}
                 <Image src={MobileLineImage} alt={""} width={50} height={520} className={"lg:hidden block absolute text-transparent"}/>
                 {
-                  applicationProcessList.map((item, index) => <MobileProcessInformationContainer icon={item.icon} step={item.step} description={item.description}>
+                  applicationProcessList.map((item, index) => <MobileProcessInformationContainer key={item.description} icon={item.icon} step={item.step} description={item.description}>
                     <MobileProcessInformationContainer.AdditionalInformation className={`${index === 0 ? "text-[rgb(255,108,122)]" : "text-white"} text-[12px] leading-[18px] font-[400] mt-[6px]`} information={item.additionalInformation} />
                   </MobileProcessInformationContainer>)
                 }
                 {
-                  applicationProcessList.map((item, index) => <PcProcessInformationContainer icon={item.icon} step={item.step} description={item.description}>
+                  applicationProcessList.map((item, index) => <PcProcessInformationContainer key={item.description} icon={item.icon} step={item.step} description={item.description}>
                     <PcProcessInformationContainer.AdditionalInformation className={`${index === 0 ? "text-[rgb(255,108,122)]" : "text-white"} text-[12px] leading-[18px] font-[400] mt-[6px]`} information={item.additionalInformation} />
                   </PcProcessInformationContainer>)
                 }

@@ -1,15 +1,5 @@
 'use client';
 
-import {useState} from "react";
-import Image from "next/image";
-
-import {UpArrowIcon} from "@/components/shared/icon/UpArrowIcon";
-import {DownArrowIcon} from "@/components/shared/icon/DownArrowIcon";
-
-import PcCareerProgramImage1 from "@/assets/images/game/information/portfolio-process/career_program_1_pc.webp"
-import PcCareerProgramImage2 from "@/assets/images/game/information/portfolio-process/career_program_2_pc.webp"
-import PcCareerProgramImage3 from "@/assets/images/game/information/portfolio-process/career_program_3_pc.webp"
-import PcCareerProgramImage4 from "@/assets/images/game/information/portfolio-process/career_program_4_pc.webp"
 import {PcPortfolioAccordion} from "@/components/game/portfolio-process/accordion/pc/PcPortfolioAccordion";
 import {MobilePortfolioAccordion} from "@/components/game/portfolio-process/accordion/mobile/MobilePortfolioAccordion";
 
@@ -39,12 +29,6 @@ export const portfolioProcessList: PortfolioProcessItem[] = [
 ]
 
 export const PortfolioProcessAccordion = () => {
-  const [selectedItemNumber, setSelectedItemNumber] = useState(0);
-
-  const toggleSelectedItemNumberHandler = (number: number) => () => {
-    setSelectedItemNumber(number);
-  }
-
   return (<section className={"flex lg:gap-[40px]"}>
     <PcPortfolioAccordion/>
     <MobilePortfolioAccordion/>

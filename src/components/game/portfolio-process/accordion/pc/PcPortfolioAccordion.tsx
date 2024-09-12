@@ -14,6 +14,7 @@ export const PcPortfolioAccordion = () => {
       <>
         <div className={"hidden lg:flex flex-col gap-[6px] w-full"}>
           {portfolioProcessList.map((item, index) => <div
+              key={item.title}
               className={`flex gap-[14px] break-keep ${index === selectedItemNumber ? '' : 'cursor-pointer'}`}
               onClick={toggleSelectedItemNumberHandler(index)}>
             <div className={`flex flex-col gap-[14px] items-center`}>

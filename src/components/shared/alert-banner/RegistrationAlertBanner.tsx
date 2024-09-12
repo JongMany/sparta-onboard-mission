@@ -86,7 +86,7 @@ export const RegistrationAlertBanner = ({text, rest, total, startObserverId, end
       startObserver.disconnect();
       endObserver.disconnect();
     };
-  }, []);
+  }, [endObserverId, startObserverId]);
   if (!isVisible) return null;
   return (
       <div

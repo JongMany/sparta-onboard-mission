@@ -15,6 +15,7 @@ export const MobilePortfolioAccordion = () => {
           {portfolioProcessList.map((item, index) => {
             const isSelected = openStatus[index]
             return <div
+                key={item.title}
                 className={`flex gap-[14px] break-keep ${isSelected ? '' : 'cursor-pointer'}`}
                 onClick={toggleOpenHandler(index)}>
               {/* Bar */}

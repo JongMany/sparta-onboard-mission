@@ -1,9 +1,14 @@
 "use client"
-import {useMediaQuery} from "react-responsive"
-import {useEffect, useState} from "react";
+import { useMediaQuery } from "react-responsive";
+import { useEffect, useState } from "react";
 
 export const useIsPc = () => {
-  const [isPc, setIsPc] = useState(() => {
+  const [isPc, setIsPc] = useState<boolean>(() => {
+    if (typeof window === "undefined") {
+      // 서버 사이드에서는 기본값으로 true 반환 (초기 상태 설정)
+      return true;
+    }
+
     const user = navigator.userAgent;
     let isCheck = true;
 
@@ -14,10 +19,13 @@ export const useIsPc = () => {
     return isCheck;
   });
 
-  const pcQuery = useMediaQuery({query: "(min-width: 1024px)"})
+  const pcQuery = useMediaQuery({ query: "(min-width: 1024px)" });
+
   useEffect(() => {
-    setIsPc(pcQuery);
+    if (typeof window !== "undefined") {
+      setIsPc(pcQuery);
+    }
   }, [pcQuery]);
 
   return isPc;
-}
+};

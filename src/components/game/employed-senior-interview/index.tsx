@@ -119,6 +119,7 @@ export const EmployedSeniorInterviewSection = () => {
                 >
                   {interviewList.map((item) => (
                       <div
+                          key={item.description}
                           className={`mr-[20px] w-[268px] h-[366px] translate-z-0 backface-hidden shrink-0 relative transition-transform block`}
                       >
                         <div
