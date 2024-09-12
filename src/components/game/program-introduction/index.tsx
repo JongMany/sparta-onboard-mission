@@ -10,7 +10,7 @@ export const ProgramIntroductionSection = () => {
           <picture className={"lg:hidden w-full"}>
             <Image src={MobileProgramIntroductionImage} alt={"내일배움캠프정보"} className={"object-cover w-full h-full inset-0 text-transparent object-[center_top]"} />
           </picture>
-          <picture className={"hidden lg:w-full lg:max-w-[820px]"}>
+          <picture className={"hidden lg:w-full lg:max-w-[820px] lg:block"}>
             <Image src={PcProgramIntroductionImage} alt={"내일배움캠프정보"} className={"object-cover w-full h-full inset-0 text-transparent object-[center_top]"} />
           </picture>
         </section>

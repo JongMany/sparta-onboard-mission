@@ -16,7 +16,7 @@ export const TimeTable = () => {
           </div>
           <InformationByTime/>
         </section>
-        <Image src={TimeTableImage} alt={"내일배움캠프 일정표"} width={328} height={654} className={"text-transparent hidden lg:max-w-full lg:h-auto"}/>
+        <Image src={TimeTableImage} alt={"내일배움캠프 일정표"} width={328} height={654} className={"text-transparent hidden lg:max-w-full lg:h-auto lg:block"}/>
       </section>
   );
 };
