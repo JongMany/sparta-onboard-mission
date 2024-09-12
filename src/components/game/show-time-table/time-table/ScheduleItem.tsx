@@ -1,8 +1,9 @@
 import React from 'react';
 import {PlusIcon} from "@/components/shared/icon/PlusIcon";
 import Image from "next/image";
-import {MobileTimeItemWithStyle} from "@/components/game/show-time-table/time-table/MobileTimeTable";
+
 import {MinusIcon} from "@/components/shared/icon/MinusIcon";
+import {MobileTimeItemWithStyle} from "@/constants/game";
 
 type Props = {
   item: MobileTimeItemWithStyle;
