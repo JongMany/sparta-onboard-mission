@@ -7,6 +7,7 @@ import ProjectImage1 from "@/assets/images/game/information/time-table/mobile/pr
 import ProjectImage2 from "@/assets/images/game/information/time-table/mobile/project_2.webp"
 import TILImage from "@/assets/images/game/information/time-table/mobile/til.webp"
 import {ScheduleItem} from "@/components/game/show-time-table/time-table/ScheduleItem";
+import {StaticImageData} from "next/image";
 
 
 type MobileTimeItem = {
@@ -15,7 +16,7 @@ type MobileTimeItem = {
   strokeColor: string;
   description?: string;
   detailInformation: {
-    imageSrc: string;
+    imageSrc: StaticImageData;
     descriptions: {
       grade: 'head' | 'text'
       text: string;
@@ -124,7 +125,7 @@ export const MobileTimeTable = () => {
   return (
       <div className={"lg:hidden block"}>
         <div className={"flex gap-[8px] flex-col"}>
-          {mobileTimeList.map((item, idx) => <ScheduleItem item={item} isOpen={openStatus[idx]}
+          {mobileTimeList.map((item, idx) => <ScheduleItem key={item.title} item={item} isOpen={openStatus[idx]}
                                                            toggleOpen={toggleOpenStatus(idx)}/>)}
         </div>
         <p className={"w-full text-center mt-[24px] font-[400] text-[12px] leading-[18px] text-[rgb(157,167,174)]"}>

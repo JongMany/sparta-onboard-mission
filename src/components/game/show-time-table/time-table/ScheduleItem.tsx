@@ -7,7 +7,7 @@ import {MinusIcon} from "@/components/shared/icon/MinusIcon";
 type Props = {
   item: MobileTimeItemWithStyle;
   isOpen: boolean;
-  toggleOpen:() => void;
+  toggleOpen: () => void;
 }
 export const ScheduleItem = ({item, isOpen, toggleOpen}: Props) => {
   return (
@@ -15,11 +15,13 @@ export const ScheduleItem = ({item, isOpen, toggleOpen}: Props) => {
         {/*Time*/}
         <div className={"flex flex-col justify-between"}>
           {item.time.map((time => <div
+              key={time}
               className={"w-[40px] h-[48px] font-[400] text-[11px] leading-[16px] text-[rgb(157,167,174)]"}>{time}</div>))}
         </div>
         {/*Section*/}
         <div
-            className={`relative w-full flex py-[16px] px-[12px] flex-col justify-center items-center gap-[12px] rounded-[8px] cursor-pointer border-[1px] ${item.additionalContainerClassName}`} onClick={toggleOpen}>
+            className={`relative w-full flex py-[16px] px-[12px] flex-col justify-center items-center gap-[12px] rounded-[8px] cursor-pointer border-[1px] ${item.additionalContainerClassName}`}
+            onClick={toggleOpen}>
           {isOpen ? <MinusIcon className={"absolute top-[10px] right-[10px]"} strokeColor={item.strokeColor}/> :
               <PlusIcon className={"absolute top-[10px] right-[10px]"} strokeColor={item.strokeColor}/>}
           {/* Title */}
@@ -31,21 +33,22 @@ export const ScheduleItem = ({item, isOpen, toggleOpen}: Props) => {
           {/* Detail Section */}
           <>
             {
-              isOpen && item.detailInformation.map((information) =>
-                  <div
-                      className={"flex pt-[12px] px-[12px] pb-[16px] flex-col gap-[16px]  rounded-[8px] bg-white w-full"}>
-                    <div className={"relative w-full object-cover"}>
-                      <Image src={information.imageSrc} alt={""}
-                             className={"relative h-full w-full inset-0 text-transparent object-cover"}/>
+                isOpen && item.detailInformation.map((information, index) =>
+                    <div
+                        key={`scheduleItem_${index}`}
+                        className={"flex pt-[12px] px-[12px] pb-[16px] flex-col gap-[16px]  rounded-[8px] bg-white w-full"}>
+                      <div className={"relative w-full object-cover"}>
+                        <Image src={information.imageSrc} alt={""}
+                               className={"relative h-full w-full inset-0 text-transparent object-cover"}/>
+                      </div>
+                      <div className={"flex flex-col gap-[8px]"}>
+                        {information.descriptions.map((description) => <div key={`${description.grade}_${description.text}`}
+                                                                            className={`${description.grade === "head" ? 'font-[700] text-[10px] leading-[15px] text-[rgb(255,108,122)]' : 'font-[400] text-[12px] leading-[18px] text-[rgb(95,102,107)]'}`}>
+                          {description.text}
+                        </div>)}
+                      </div>
                     </div>
-                    <div className={"flex flex-col gap-[8px]"}>
-                      {information.descriptions.map((description) => <div
-                          className={`${description.grade === "head" ? 'font-[700] text-[10px] leading-[15px] text-[rgb(255,108,122)]' : 'font-[400] text-[12px] leading-[18px] text-[rgb(95,102,107)]'}`}>
-                        {description.text}
-                      </div>)}
-                    </div>
-                  </div>
-              )
+                )
             }
           </>
         </div>

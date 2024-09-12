@@ -2,7 +2,6 @@
 import Link from "next/link";
 import NewLogo from '@/assets/images/newLogo.a1d35235.svg'
 import Image from "next/image";
-import {IoIosArrowDown} from "react-icons/io";
 import {useScrollDirection} from "@/hooks/shared/useScrollDirection";
 import {ReviewAndBlogDropdownMenu} from "@/components/shared/main-header/dropdown-menu/ReviewAndBlogDropdownMenu";
 import {useState} from "react";

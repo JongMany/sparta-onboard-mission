@@ -1,5 +1,6 @@
 import React from 'react';
-import {type RecruitmentInformation} from "@/components/game/recruitment-information";
+import {type RecruitmentInformation} from "@/constants/game";
+
 
 type Props = {
   isLast: boolean;

@@ -91,14 +91,15 @@ const PcProjectResultCarousel = () => {
               onTouchMove={handleMouseMove}
               onTouchEnd={handleMouseUp}
           >
-            {pcProjectResultList.map((item, idx) => {
-              let currentState = getCurrentCarouselState(item.num, activeProjectNumber);
+            {pcProjectResultList.map((item) => {
+              const currentState = getCurrentCarouselState(item.num, activeProjectNumber);
               const diff = Math.abs(item.num - activeProjectNumber);
               const zIndex = zIndexDepth[diff];
               const correctionValue = getCorrectionValueByCurrentState(currentState, moveDistance);
               const sectionTranslateValue = diff * unitOfTranslate * -1 + correctionValue;
 
               return <div
+                  key={item.title}
                   className={`${swiped ? "duration-300" : `duration-0`} ${zIndex} transition-transform mr-[400px] transform-style-3d relative shrink-0 block w-[750px] h-[388px] rotate-x-0 rotate-y-0 scale-1`}
                   style={{
                     transform: `translate3d(0px,0px,${sectionTranslateValue}px)`

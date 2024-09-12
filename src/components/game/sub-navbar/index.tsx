@@ -2,7 +2,6 @@
 
 import React, {useEffect} from 'react';
 import {useScrollDirection} from "@/hooks/shared/useScrollDirection";
-import Link from "next/link";
 import {useHash} from "@/hooks/shared/useHash";
 import {scrollToSection} from "@/utils/shared/scrollToSection";
 

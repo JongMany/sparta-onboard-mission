@@ -1,11 +1,11 @@
 import React, {PropsWithChildren} from 'react';
-import Image from "next/image";
+import Image, {StaticImageData} from "next/image";
 import {
   PcAdditionalInformation
 } from "@/components/game/recruitment-information/process-information-item/PcAdditionalInformation";
 
 type Props = {
-  icon: string;
+  icon: StaticImageData;
   step: string;
   description: string;
 }

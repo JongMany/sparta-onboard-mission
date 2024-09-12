@@ -1,5 +1,5 @@
 "use client";
-import React, { useState} from 'react';
+import React, {MouseEvent, useState} from 'react';
 import Image from "next/image";
 import NineToTenImage from "@/assets/images/game/information/time-table/pc/nineToTen.webp";
 import TenToFifteenImage from "@/assets/images/game/information/time-table/pc/tenToFifteen.webp";
@@ -11,14 +11,15 @@ export const InformationByTime = () => {
   const [selectEducationTime, setSelectEducationTime] = useState<EducationTime>('9-10');
   const [fade, setFade] = useState<'fadeIn' | 'fadeOut'>('fadeIn');
 
-  const selectEducationTimeHandler = (e) => {
-    // "[data-name=dataName]"
-    if (e.target.closest("[data-types=time-table]")) {
-      if (e.target.dataset.target === selectEducationTime) return;
+  const selectEducationTimeHandler = (e:MouseEvent<HTMLDivElement>) => {
+    const targetElement = e.target as HTMLElement;
+
+    if (targetElement.closest("[data-types=time-table]")) {
+      if (targetElement.dataset.target === selectEducationTime) return;
 
       setFade('fadeOut');
       setTimeout(() => {
-        setSelectEducationTime(e.target.dataset.target as EducationTime);
+        setSelectEducationTime(targetElement.dataset.target as EducationTime);
         setFade('fadeIn');
       }, 150);
     }

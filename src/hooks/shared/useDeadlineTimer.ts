@@ -11,7 +11,7 @@ export const useDeadlineTimer = (deadline:Date) => {
   useEffect(() => {
     const calculateTimeRemaining = () => {
       const now = new Date();
-      const timeDiff = deadline - now;
+      const timeDiff = deadline.getTime() - now.getTime();
 
       if (timeDiff <= 0) {
         clearInterval(intervalId);

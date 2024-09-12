@@ -7,10 +7,6 @@ import {
 
 import PcLineImage from "@/assets/images/game/information/recruitment-information/pc.webp"
 import MobileLineImage from "@/assets/images/game/information/recruitment-information/mobile.webp";
-import WritingImage from "@/assets/images/game/information/recruitment-information/writing.webp";
-import ResultImage from "@/assets/images/game/information/recruitment-information/result.webp";
-import CommunityImage from "@/assets/images/game/information/recruitment-information/community.webp"
-import CheckImage from "@/assets/images/game/information/recruitment-information/check.webp";
 import {
   PcProcessInformationContainer
 } from "@/components/game/recruitment-information/process-information-item/PcProcessInformationContainer";

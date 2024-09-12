@@ -1,12 +1,23 @@
-import {useState} from "react";
+import React, {useState} from "react";
 
 export const useSwipe = (prevAction: () => void, nextAction: () => void, threshold: number = 200) => {
   const [startX, setStartX] = useState(0); // 스와이프 시작 좌표
   const [endX, setEndX] = useState(0);     // 스와이프 종료 좌표
 
-  const handleMouseDown = (e) => {
-    setStartX(e.clientX || e.touches[0].clientX);
-    setEndX(e.clientX || e.touches[0].clientX)
+  // const handleMouseDown = (e) => {
+  //   setStartX(e.clientX || e.touches[0].clientX);
+  //   setEndX(e.clientX || e.touches[0].clientX)
+  // };
+  const handleMouseDown = (e: React.MouseEvent<HTMLDivElement> | React.TouchEvent<HTMLDivElement>) => {
+    if ('clientX' in e) {
+      // 마우스 이벤트
+      setStartX(e.clientX);
+      setEndX(e.clientX);
+    } else {
+      // 터치 이벤트
+      setStartX(e.touches[0].clientX);
+      setEndX(e.touches[0].clientX);
+    }
   };
 
   // 마우스 또는 터치 이동 중 호출

@@ -2,6 +2,7 @@ import WritingImage from "@/assets/images/game/information/recruitment-informati
 import ResultImage from "@/assets/images/game/information/recruitment-information/result.webp";
 import CommunityImage from "@/assets/images/game/information/recruitment-information/community.webp";
 import CheckImage from "@/assets/images/game/information/recruitment-information/check.webp";
+import {StaticImageData} from "next/image";
 
 export type RecruitmentInformation = {
   label: string;
@@ -26,7 +27,7 @@ export const recruitmentInformationList: RecruitmentInformation[] = [
 ];
 
 type ApplicationProcess = {
-  icon: string;
+  icon: StaticImageData;
   step: string;
   description: string;
   additionalInformation: string;
